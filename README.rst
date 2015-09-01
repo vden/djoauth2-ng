@@ -1,21 +1,14 @@
-DJOAuth2
+DJOAuth2-ng
 ========
 
-.. image:: https://badge.fury.io/py/djoauth2.png
-    :target: https://pypi.python.org/pypi/djoauth2
-
-.. image:: https://travis-ci.org/Locu/djoauth2.png?branch=master
-    :target: https://travis-ci.org/Locu/djoauth2
-
-* Source code: https://github.com/locu/djoauth2
-* Documentation: http://djoauth2.readthedocs.org/
-* Issue tracker: https://github.com/locu/djoauth2/issues
-* Mailing list: https://groups.google.com/forum/#!forum/djoauth2
+* Source code: https://github.com/vden/djoauth2-ng
 
 What is DJOAuth2?
 -----------------
 
-DJOAuth2 is an implementation of a *sane* subset of the `OAuth 2`_
+Built on top of DJOauth2: https://github.com/Locu/djoauth2
+
+DJOAuth2-ng is an implementation of a *almost whole* subset of the `OAuth 2`_
 specification, which is described by the `OAuth Website`_ as
 
   An open protocol to allow secure authorization in a simple and standard
@@ -38,15 +31,7 @@ problems:
 * Acting as an authentication server, allowing other sites to "Log in with
   <your app>".
 
-Contributing
-------------
-
-Interested in contributing? Great! Check out `the contribution guide`_, which
-includes instructions for setting up dependencies, generating migrations, and
-running the test suite.
-
 
 .. _`OAuth 2`: http://tools.ietf.org/html/rfc6749
 .. _`OAuth website`: http://oauth.net/
-.. _`the contribution guide`: http://djoauth2.readthedocs.org/en/latest/contributing.html
 
