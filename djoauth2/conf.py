@@ -32,6 +32,7 @@ class DJOAuth2Conf(AppConf):
   # Never specified, but this value is used multiple times in examples from
   # both the OAuth and Bearer Token specifications.
   ACCESS_TOKEN_LIFETIME = 3600
+  ACCESS_TOKEN_CLIENT_CREDENTIALS_LIFETIME = 60
   ACCESS_TOKENS_REFRESHABLE = True
 
   AUTHORIZATION_CODE_LENGTH = 30
@@ -94,4 +95,3 @@ class DJOAuth2Conf(AppConf):
   #: changing this value in a production environment -- the security of your
   #: users will be greatly compromised.
   SSL_ONLY = True
-

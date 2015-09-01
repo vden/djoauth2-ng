@@ -108,7 +108,7 @@ class AccessToken(models.Model):
     unique=True,
   )
   scopes = models.ManyToManyField(Scope, related_name='access_tokens')
-  user = models.ForeignKey(UserModel)
+  user = models.ForeignKey(UserModel, blank=True, null=True)
   value = models.CharField(
     db_index=True,
     default=make_bearer_token(settings.DJOAUTH2_ACCESS_TOKEN_LENGTH),
@@ -136,4 +136,3 @@ class AccessToken(models.Model):
 
   def __str__(self):
     return str(self.value)
-

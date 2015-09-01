@@ -170,6 +170,10 @@ def access_token_endpoint(request):
                                                                    client)
     elif grant_type == 'refresh_token':
       access_token = generate_access_token_from_refresh_token(request, client)
+
+    elif grant_type == 'client_credentials':
+      access_token = generate_access_token_for_implicit_grant(request, client)
+
     else:
       raise UnsupportedGrantType(
           '"{}" is not a supported "grant_type"'.format(grant_type))
@@ -383,6 +387,15 @@ def generate_access_token_from_refresh_token(request, client):
   return new_access_token
 
 
+def generate_access_token_for_implicit_grant(request, client):
+  new_access_token = AccessToken.objects.create(client=client)
+  new_access_token.refresh_token = None
+  new_access_token.lifetime = settings.DJOAUTH2_ACCESS_TOKEN_CLIENT_CREDENTIALS_LIFETIME
+  new_access_token.save()
+
+  return new_access_token
+
+
 class AccessTokenError(DJOAuthError):
   """ Base class for all AccessToken-related errors.
 
@@ -451,4 +464,3 @@ class InvalidScope(AccessTokenError):
   granted by the resource owner.
   """
   error_name = 'invalid_scope'
-
